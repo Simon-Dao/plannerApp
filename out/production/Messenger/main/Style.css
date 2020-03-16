@@ -1,0 +1,34 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Oct 4, 2019, 9:33:49 PM
+    Author     : Simon Dao
+*/
+
+
+.button {
+    -fx-background-color: #1e90ff;
+    -fx-background-radius: 4;
+}
+/*
+.button:hover {
+    -fx-border-color: #1e90ff;
+    -fx-border-radius: 4;
+    -fx-border-width: 2;
+    -fx-background-color: white;
+    -fx-background-radius: 4;
+    -fx-text-fill: #1e90ff;
+    }
+ */
+
+/*
+.text {
+    -fx-background-color: #1e90ff;
+    -fx-text-fill: white;
+    -fx-text-size: 500;
+    -fx-background-size: 3;
+}
+*/
