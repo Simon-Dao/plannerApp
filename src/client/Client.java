@@ -4,6 +4,7 @@ import gui.UITools;
 import javafx.application.Platform;
 import javafx.scene.paint.Color;
 import main.Main;
+import server.Server;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -16,27 +17,34 @@ public class Client implements Runnable {
     public static int PORT = 5002;
     public static String IP = "192.168.0.21";
 
-    public BufferedReader in;
+    public static BufferedReader in;
     public PrintWriter out;
     private Socket server;
     private UITools tools = new UITools();
 
-    public static String serverResponse;
+    public static String serverResponse = "!nametaken!false";
 
     public Client() throws IOException {
-            server = new Socket(IP, PORT);
-            out = new PrintWriter(server.getOutputStream(), true);
-            in = new BufferedReader(new InputStreamReader(server.getInputStream()));
+
+        server = new Socket(IP, PORT);
+        out = new PrintWriter(server.getOutputStream(), true);
+        in = new BufferedReader(new InputStreamReader(server.getInputStream()));
     }
 
     @Override
     public void run() {
 
         try {
-            while(true) {
+            while (true) {
+
+                /*
+                    takes in a response from the server and prints it out to the user
+                 */
                 serverResponse = in.readLine();
-                System.out.println(serverResponse);
-                Platform.runLater( () -> Main.app.messageArea.addMessage(serverResponse, Color.RED));
+                System.out.println("[CLIENT] "+serverResponse);
+                if (!serverResponse.startsWith("!")) {
+                    Platform.runLater(() -> Main.app.messageArea.addMessage(serverResponse, Color.RED));
+                }
 
                 try {
 
@@ -44,8 +52,8 @@ public class Client implements Runnable {
                     e.printStackTrace();
                 }
             }
-        } catch(Exception e) {
-            e.printStackTrace();
+        } catch (Exception e) {
+            //e.printStackTrace();
         } finally {
             out.close();
             try {

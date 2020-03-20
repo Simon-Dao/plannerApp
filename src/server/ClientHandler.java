@@ -10,11 +10,11 @@ public class ClientHandler implements Runnable, Serializable {
 
     ArrayList<ClientHandler> clients;
 
-    private Socket         client;
+    private Socket client;
 
     private BufferedReader in;
 
-    private PrintWriter    out;
+    public PrintWriter out;
 
     public int id;
 
@@ -26,8 +26,8 @@ public class ClientHandler implements Runnable, Serializable {
         this.client = client;
         this.clients = clients;
 
-        in  = new BufferedReader(new InputStreamReader(client.getInputStream()));
-        out = new PrintWriter   (client.getOutputStream(), true);
+        in = new BufferedReader(new InputStreamReader(client.getInputStream()));
+        out = new PrintWriter(client.getOutputStream(), true);
     }
 
     /*
@@ -42,25 +42,53 @@ public class ClientHandler implements Runnable, Serializable {
      */
     @Override
     public void run() {
-        try{
-            while(true) {
+        try {
+            while (true) {
 
                 String request = in.readLine();
 
-                if(request.startsWith("!userinfo!")) {
+                System.out.println(request);
+
+                if (request.startsWith("!userinfo!")) {
                     //make code that checks if that account exists
+                    String name = request.substring(10, request.indexOf(";"));
+                    String password = request.substring(request.indexOf(";") + 1);
 
-                } else if(request.startsWith("!newuser!")){
-                    //make code that adds a person to the accounts
-                    String name = request.substring(9, request.indexOf(" "));
+                    //TODO make the database return login errors like name doesn't exist and that stuff
 
+                    System.out.printf("%s%s",name, password);
 
+                    if (Server.dataBase.verifyLoginData(name, password)) {
+                        out.println("!userIsVerified!true");
+                    } else {
+                        out.println("!userIsVerified!false");
+                    }
+
+                } else if (request.startsWith("!newuser!")) {
+
+                    String[] userData = parseRequest(request);
+
+                    Server.dataBase.addRecord(this, userData[0], userData[1], userData[2]);
+                    //Server.dataBase.getRecord();
+
+                } else if (request.startsWith("!checkDupes!")) {
+
+                    //parse request and find out if the name is taken
+                    String name = request.substring(12);
+
+                    //System.out.println("[CLIENTHANDLER] " + name + " is taken: " + Server.dataBase.checkForDupe(name));
+
+                    if (Server.dataBase.checkForDupe(name)) {
+                        out.println("!nametaken!true");
+                    } else if (!Server.dataBase.checkForDupe(name)) {
+                        out.println("!nametaken!false");
+                    }
                 } else {
                     //System.out.println("[CLIENTHANDLER] sending message "+request);
-                    outToAll(id+" "+request);
+                    outToAll(id + " " + request);
                 }
             }
-        } catch(Exception e) {
+        } catch (Exception e) {
             Server.USER_COUNT--;
         } finally {
             out.close();
@@ -73,11 +101,24 @@ public class ClientHandler implements Runnable, Serializable {
     }
 
     private void outToAll(String msg) {
-        for(ClientHandler c : clients) {
-            if(c.id != this.id) {
+        for (ClientHandler c : clients) {
+            if (c.id != this.id) {
                 c.out.println(msg);
             }
         }
+    }
+
+    private String[] parseRequest(String str) {
+
+        int[] div = {str.indexOf(" "), str.substring(str.indexOf(" ") + 1).indexOf(" ") + str.indexOf(" ")};
+
+        String name = str.substring(9, str.indexOf(" "));
+        String password = str.substring(div[0] + 1, div[1] + 1);
+        String color = str.substring(div[1] + 2);
+
+        String[] result = {name, password, color};
+
+        return result;
     }
 }
 

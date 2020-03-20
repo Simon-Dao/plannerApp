@@ -8,12 +8,7 @@ import javafx.scene.control.SplitPane;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 
-import java.io.IOException;
-
 public class Main extends Application {
-
-    //TODO add a new friend system
-    //TODO make the server store user data
 
     public static Client client;
 
@@ -22,12 +17,17 @@ public class Main extends Application {
     public static Scene login;
     public static Scene signup;
 
-    public static Pane signupWindow;
+    public static Pane signupPane;
+
+    public static SignUpWindow signupWindow;
 
     public static AppUI app;
 
     /*
-
+        TODO add a friend system
+        TODO create a contacts section on the left
+        TODO make it search for people and then send them a friend request
+        TODO make a login system
      */
     @Override
     public void start(Stage stage) throws Exception {
@@ -35,26 +35,26 @@ public class Main extends Application {
 
         SplitPane root = new SplitPane();
         Pane loginLayout = new Pane();
-        signupWindow = new Pane();
+        signupPane = new Pane();
 
         new LoginWindow(loginLayout);
-        new SignUpWindow(signupWindow);
+        signupWindow = new SignUpWindow(signupPane);
         app = new AppUI(root);
 
-        signup = new Scene(signupWindow, 300, 300);
+        signup = new Scene(signupPane, 300, 300);
         new WindowControls(stage, signup);
 
         login = new Scene(loginLayout, 300, 250);
         new WindowControls(stage, login);
 
-        messengerApp = new Scene(root, 500 ,500);
+        messengerApp = new Scene(root, 500, 500);
         messengerApp.getStylesheets().add(this.getClass().getResource("Style.css").toExternalForm());
 
         new WindowControls(stage, messengerApp);
 
         stage.setTitle("Messenger");
-        //stage.setScene(login);
-        stage.setScene(signup);
+        stage.setScene(login);
+        //stage.setScene(signup);
         stage.show();
     }
 

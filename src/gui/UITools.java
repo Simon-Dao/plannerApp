@@ -23,7 +23,7 @@ public class UITools {
             public void changed(ObservableValue<? extends String> observable, String oldValue, String newValue) {
 
                 //is the text is not greater than the max and is not empty
-                if(field.getText().length() > length) {
+                if (field.getText().length() > length) {
                     String s = field.getText().substring(0, length);
                     field.setText(s);
                 }
@@ -37,22 +37,24 @@ public class UITools {
     }
 
     public void sendUserData(String username, String password) {
-        Main.client.out.println("!userinfo!"+username+";"+password);
+        Main.client.out.println("!userinfo!" + username + ";" + password);
     }
+
 
     public void sendNewAccountForm(String username, String password, String color) {
-        Main.client.out.println("!newuser!"+username+" "+password+" "+color);
+        Main.client.out.println("!newuser!" + username + " " + password + " " + color);
     }
 
-    public void sendAccountCreationError() {
-
+    public void checkIfNameTaken(String name) {
+        Main.client.out.println("!checkDupes!" + name);
     }
 
     public boolean serverIsAlive(String IP, int PORT) {
 
-        try(Socket s = new Socket(IP, PORT) ) {
+        try (Socket s = new Socket(IP, PORT)) {
             return true;
-        } catch (IOException e) {}
+        } catch (IOException e) {
+        }
         return false;
     }
 
@@ -60,38 +62,27 @@ public class UITools {
         button.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent event) {
-                window.profile = color;
+                window.color = color;
             }
         });
     }
 
     public void createUser(String username, String password, String profile) {
-        if (serverIsAlive(Client.IP, Client.PORT)) {
 
-            if (!username.isEmpty() && !password.isEmpty()) {
+        if (!username.isEmpty() && !password.isEmpty()) {
 
-                Main.stage.close();
+            Main.stage.close();
 
-                try {
-                    Thread.sleep(600);
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
-                }
-
-                Main.stage.show();
-                Main.stage.setScene(Main.messengerApp);
-
-                try {
-                    Main.client = new Client();
-                    new Thread(Main.client).start();
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
-
-                sendNewAccountForm(username,password,profile);
+            try {
+                Thread.sleep(600);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
             }
-        } else {
-            System.err.println("go away server is down");
+
+            Main.stage.show();
+            Main.stage.setScene(Main.messengerApp);
+
+            sendNewAccountForm(username, password, profile);
         }
     }
 
@@ -107,4 +98,5 @@ public class UITools {
         Main.stage.setScene(scene);
         Main.stage.show();
     }
+
 }

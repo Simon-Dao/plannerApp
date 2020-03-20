@@ -23,7 +23,7 @@ public class Server {
 
     private ArrayList<ClientHandler> clients = new ArrayList<>();
 
-    public static DataBase users;
+    public static DataBase dataBase;
 
     /*
         creates a new text file that will store all the user information
@@ -35,9 +35,9 @@ public class Server {
 
         ServerSocket server = new ServerSocket(PORT);
 
-        users = new DataBase();
+        dataBase = new DataBase();
 
-        while(true) {
+        while (true) {
             Socket client = server.accept();
             USER_COUNT++;
 
@@ -46,6 +46,10 @@ public class Server {
 
             clients.add(clientThread);
             pool.execute(clientThread);
+
+            // if(clients.size() > 0) {
+            //  dataBase.getRecord();
+            //}
         }
     }
 
