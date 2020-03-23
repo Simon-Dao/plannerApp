@@ -11,7 +11,14 @@ and open the template in the editor.
 
 .button {
     -fx-background-color: #1e90ff;
-    -fx-background-radius: 4;
+    -fx-background-radius: 20;
+    -fx-text-fill: white;
+    -fx-font-family: Open Sans;
+}
+
+.text-field {
+    -fx-background-color: #CFD8DC ;
+    -fx-background-radius: 20;
 }
 /*
 .button:hover {
@@ -23,6 +30,7 @@ and open the template in the editor.
     -fx-text-fill: #1e90ff;
     }
  */
+
 
 /*
 .text {

@@ -1,6 +1,7 @@
 package gui;
 
 import client.Client;
+import client.LocalUser;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.scene.Scene;
@@ -17,8 +18,6 @@ import main.Main;
 
 import java.io.IOException;
 
-//TODO get why the messenger starts even when the username is taken
-
 public class SignUpWindow {
 
     UITools tools = new UITools();
@@ -29,21 +28,9 @@ public class SignUpWindow {
 
     public SignUpWindow(Pane root) {
 
-        //starting the client
-        try {
-            if (tools.serverIsAlive(Client.IP, Client.PORT)) {
-                Main.client = new Client();
-                new Thread(Main.client).start();
-            } else {
-                System.err.println("server is currently unavailable");
-            }
-
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-
         TextField username = new TextField();
-        tools.maxCharLength(username, 20);
+        username.setStyle("-fx-background-color: #CFD8DC; -fx-background-radius: 10;");
+        tools.maxCharLength(username, 30);
         username.setLayoutX(45);
         username.setLayoutY(70);
 
@@ -82,7 +69,8 @@ public class SignUpWindow {
         username.addEventFilter(KeyEvent.KEY_RELEASED, usernameEventFilter);
 
         TextField password = new TextField();
-        tools.maxCharLength(username, 20);
+        password.setStyle("-fx-background-color: #CFD8DC; -fx-background-radius: 10;");
+        tools.maxCharLength(username, 30);
         password.setLayoutX(45);
         password.setLayoutY(130);
 
@@ -121,19 +109,19 @@ public class SignUpWindow {
 
         Text usernameText = new Text("username");
         usernameText.setFont(new Font("consolas", 15));
-        usernameText.setFill(Color.GREEN);
+        usernameText.setFill(Color.web("#1e90ff"));
         usernameText.setLayoutX(45);
         usernameText.setLayoutY(60);
 
         Text passwordText = new Text("password");
         passwordText.setFont(new Font("consolas", 15));
-        passwordText.setFill(Color.GREEN);
+        passwordText.setFill(Color.web("#1e90ff"));
         passwordText.setLayoutX(45);
         passwordText.setLayoutY(120);
 
         Text profileText = new Text("choose a new profile color");
         profileText.setFont(new Font("consolas", 15));
-        profileText.setFill(Color.GREEN);
+        profileText.setFill(Color.web("#1e90ff"));
         profileText.setLayoutX(45);
         profileText.setLayoutY(180);
 
@@ -141,7 +129,7 @@ public class SignUpWindow {
         signupText.setLayoutX(15);
         signupText.setLayoutY(25);
         signupText.setFont(new Font("colsolas", 23));
-        signupText.setFill(Color.GREEN);
+        signupText.setFill(Color.web("#1e90ff"));
 
         HBox colorSelection = new HBox(10);
         colorSelection.setLayoutX(45);
@@ -150,27 +138,27 @@ public class SignUpWindow {
         Button blue = new Button();
         blue.setPrefWidth(35);
         tools.setColorButton(this, blue, "blue");
-        blue.setStyle("-fx-background-color: blue; -fx-background-radius: 5;");
+        blue.setStyle("-fx-background-color: blue; -fx-background-radius: 20;");
 
         Button red = new Button();
         red.setPrefWidth(35);
         tools.setColorButton(this, red, "red");
-        red.setStyle("-fx-background-color: red; -fx-background-radius: 5;");
+        red.setStyle("-fx-background-color: red; -fx-background-radius: 20;");
 
         Button green = new Button();
         green.setPrefWidth(35);
         tools.setColorButton(this, green, "green");
-        green.setStyle("-fx-background-color: green; -fx-background-radius: 5;");
+        green.setStyle("-fx-background-color: green; -fx-background-radius: 20;");
 
         Button orange = new Button();
         orange.setPrefWidth(35);
         tools.setColorButton(this, orange, "orange");
-        orange.setStyle("-fx-background-color: orange; -fx-background-radius: 5;");
+        orange.setStyle("-fx-background-color: orange; -fx-background-radius: 20;");
 
         Button black = new Button();
         black.setPrefWidth(35);
         tools.setColorButton(this, black, "black");
-        black.setStyle("-fx-background-color: black; -fx-background-radius: 5;");
+        black.setStyle("-fx-background-color: black; -fx-background-radius: 20;");
 
         colorSelection.getChildren().add(blue);
         colorSelection.getChildren().add(red);
@@ -179,9 +167,10 @@ public class SignUpWindow {
         colorSelection.getChildren().add(black);
 
         Button create = new Button("create");
+        create.setPrefWidth(70);
         create.setLayoutX(45);
         create.setLayoutY(240);
-        create.setStyle("-fx-background-color: #8BC34A; -fx-background-radius: 5;");
+        create.setStyle("-fx-background-color: #1E90FF; -fx-background-radius: 10; -fx-text-fill: whitesmoke;");
         create.setOnAction(new EventHandler<ActionEvent>() {
 
             //adds a user to the database
@@ -203,10 +192,15 @@ public class SignUpWindow {
 
                         Thread.sleep(300);
 
-                        if (Client.serverResponse.equals("!nametaken!false")) {
-                            System.out.println("[SIGNUPWINDOW] creating user");
+                        if (Main.client.serverResponse.equals("!nametaken!false")) {
+                            //System.out.println("[SIGNUPWINDOW] creating user");
+                            Main.localUser = new LocalUser();
+                            Main.localUser.setName(name);
+                            Main.localUser.setPassword(pass);
+                            Main.localUser.setColor(color);
+
                             tools.createUser(name, pass, color);
-                        } else if (Client.serverResponse.equals("!nametaken!true")) {
+                        } else if (Main.client.serverResponse.equals("!nametaken!true")) {
                             usernameWarning.setText("username is unavailable");
                         }
                     } else {
@@ -224,7 +218,7 @@ public class SignUpWindow {
             }
         });
 
-        Button login = new Button("back to login");
+        Button login = new Button("have an account?");
         login.setLayoutX(40);
         login.setLayoutY(270);
         login.setStyle("-fx-background-color: whitesmoke; -fx-underline: true;");

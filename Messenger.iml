@@ -7,6 +7,26 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES />
+        <JAVADOC />
+        <SOURCES>
+          <root url="file://$MODULE_DIR$/Jerady-fontawesomefx-6cbf97484669/fontawesomefx/fontawesomefx-commons/src/main/java" />
+          <root url="file://$MODULE_DIR$/Jerady-fontawesomefx-6cbf97484669/fontawesomefx/fontawesomefx-controls/src/main/java" />
+          <root url="file://$MODULE_DIR$/Jerady-fontawesomefx-6cbf97484669/fontawesomefx/fontawesomefx-emojione/src/main/java" />
+          <root url="file://$MODULE_DIR$/Jerady-fontawesomefx-6cbf97484669/fontawesomefx/fontawesomefx-emojione/src/test/java" />
+          <root url="file://$MODULE_DIR$/Jerady-fontawesomefx-6cbf97484669/fontawesomefx/fontawesomefx-fontawesome/src/main/java" />
+          <root url="file://$MODULE_DIR$/Jerady-fontawesomefx-6cbf97484669/fontawesomefx/fontawesomefx-fontawesome/src/test/java" />
+          <root url="file://$MODULE_DIR$/Jerady-fontawesomefx-6cbf97484669/fontawesomefx/fontawesomefx-icons525/src/main/java" />
+          <root url="file://$MODULE_DIR$/Jerady-fontawesomefx-6cbf97484669/fontawesomefx/fontawesomefx-materialdesignfont/src/main/java" />
+          <root url="file://$MODULE_DIR$/Jerady-fontawesomefx-6cbf97484669/fontawesomefx/fontawesomefx-materialicons/src/main/java" />
+          <root url="file://$MODULE_DIR$/Jerady-fontawesomefx-6cbf97484669/fontawesomefx/fontawesomefx-materialstackicons/src/main/java" />
+          <root url="file://$MODULE_DIR$/Jerady-fontawesomefx-6cbf97484669/fontawesomefx/fontawesomefx-octicons/src/main/java" />
+          <root url="file://$MODULE_DIR$/Jerady-fontawesomefx-6cbf97484669/fontawesomefx/fontawesomefx-weathericons/src/main/java" />
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="library" name="java" level="project" />
   </component>
 </module>
-

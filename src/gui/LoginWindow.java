@@ -2,9 +2,11 @@ package gui;
 
 import client.Client;
 import javafx.event.ActionEvent;
+import javafx.event.Event;
 import javafx.event.EventHandler;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
+import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.Pane;
 import javafx.scene.paint.Color;
@@ -21,57 +23,77 @@ public class LoginWindow {
 
     public LoginWindow(Pane root) {
 
-        try {
-            if (tools.serverIsAlive(Client.IP, Client.PORT)) {
-                Main.client = new Client();
-                new Thread(Main.client).start();
-            }
-        } catch (Exception e) {
-            System.err.println("server is currently unavailable");
-        }
-
         Text loginText = new Text("Login");
         loginText.setFont(new Font("consolas", 20));
-        loginText.setFill(Color.GREEN);
+        loginText.setFill(Color.web("#1e90ff"));
         loginText.setLayoutX(80);
         loginText.setLayoutY(60);
 
-        TextField user_name = new TextField();
-        user_name.setPromptText("username");
-        user_name.setLayoutX(80);
-        user_name.setLayoutY(80);
+        TextField username = new TextField();
+        username.setStyle("-fx-background-color: #CFD8DC; -fx-background-radius: 10;");
+        username.setPromptText("username");
+        username.setLayoutX(80);
+        username.setLayoutY(80);
+        tools.maxCharLength(username, 30);
 
-        Text usernameWarning = new Text("test");
+        Text usernameWarning = new Text("");
         usernameWarning.setLayoutX(80);
         usernameWarning.setLayoutY(117);
         usernameWarning.setFill(Color.RED);
         usernameWarning.setFont(new Font("consolas", 13));
 
+        //prevents username textfield from taking in ! and " " for security
+        EventHandler eventHandler = new EventHandler() {
+            @Override
+            public void handle(Event event) {
+                try {
+                    String text = username.getText();
+
+                    if (text.contains(" ")) {
+                        usernameWarning.setText("cannot use space");
+                        username.setText(text.replace(" ", ""));
+
+                    } else if (text.contains("!")) {
+                        usernameWarning.setText("cannot use ! symbol");
+                        username.setText(text.replace("!", ""));
+
+                    } else {
+                        usernameWarning.setText("");
+                    }
+
+                } catch (StringIndexOutOfBoundsException e) {
+                }
+            }
+        };
+        username.addEventFilter(KeyEvent.KEY_RELEASED, eventHandler);
+
         TextField password = new TextField();
+        password.setStyle("-fx-background-color: #CFD8DC; -fx-background-radius: 10;");
         password.setPromptText("password");
         password.setLayoutX(80);
         password.setLayoutY(125);
 
-        Text passwordWarning = new Text("test");
+        Text passwordWarning = new Text("");
         passwordWarning.setLayoutX(80);
         passwordWarning.setLayoutY(162);
         passwordWarning.setFill(Color.RED);
         passwordWarning.setFont(new Font("consolas", 13));
 
         Button apply = new Button("apply");
-        apply.setStyle("-fx-background-color: #8BC34A; -fx-background-radius: 5;");
+        apply.setStyle("-fx-background-color: #1E90FF; -fx-background-radius: 5; -fx-text-fill: whitesmoke;");
         apply.setLayoutX(80);
         apply.setLayoutY(180);
         apply.setPrefWidth(150);
         apply.setOnAction(new EventHandler<ActionEvent>() {
+
             @Override
             public void handle(ActionEvent event) {
 
                 if (tools.serverIsAlive(Client.IP, Client.PORT)) {
 
-                    if (user_name.getText().length() != 0 && password.getText().length() != 0) {
+                    if (username.getText().length() != 0 && password.getText().length() != 0) {
 
-                        tools.sendUserData(user_name.getText(), password.getText());
+                        tools.sendUserData(username.getText(), password.getText());
 
                         try {
                             Thread.sleep(400);
@@ -81,11 +103,10 @@ public class LoginWindow {
 
                         System.out.println("[LOGINWINDOW] "+Client.serverResponse.startsWith("!userIsVerified!true"));
 
-                        //TODO make the server recognise login info and stuff
-                            if (Client.serverResponse.startsWith("!userIsVerified!true")) {
+                            if (Main.client.serverResponse.startsWith("!userIsVerified!true")) {
                                 tools.changeScene(Main.messengerApp);
-                            } else if (Client.serverResponse.startsWith("!userIsVerified!false")) {
-                                usernameWarning.setText("wrong everything");
+                            } else if (Main.client.serverResponse.startsWith("!userIsVerified!false")) {
+                                usernameWarning.setText("user could not be verified");
                             }
                         }
                 } else {
@@ -108,7 +129,7 @@ public class LoginWindow {
         });
 
         root.getChildren().add(loginText);
-        root.getChildren().add(user_name);
+        root.getChildren().add(username);
         root.getChildren().add(usernameWarning);
         root.getChildren().add(password);
         root.getChildren().add(passwordWarning);

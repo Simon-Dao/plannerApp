@@ -45,11 +45,9 @@ public class Server {
             ClientHandler clientThread = new ClientHandler(client, clients, id);
 
             clients.add(clientThread);
+            System.out.println(USER_COUNT);
             pool.execute(clientThread);
 
-            // if(clients.size() > 0) {
-            //  dataBase.getRecord();
-            //}
         }
     }
 

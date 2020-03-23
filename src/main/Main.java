@@ -1,11 +1,13 @@
 package main;
 
 import client.Client;
+import client.LocalUser;
 import gui.*;
 import javafx.application.Application;
 import javafx.scene.Scene;
 import javafx.scene.control.SplitPane;
 import javafx.scene.layout.Pane;
+import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 
 public class Main extends Application {
@@ -17,20 +19,27 @@ public class Main extends Application {
     public static Scene login;
     public static Scene signup;
 
+    private UITools tools = new UITools();
+
     public static Pane signupPane;
 
     public static SignUpWindow signupWindow;
 
     public static AppUI app;
 
+    public static LocalUser localUser;
+
     /*
         TODO add a friend system
         TODO create a contacts section on the left
         TODO make it search for people and then send them a friend request
-        TODO make a login system
+        TODO make the person's color appear depending on login
      */
     @Override
     public void start(Stage stage) throws Exception {
+
+        tools.startClient();
+
         this.stage = stage;
 
         SplitPane root = new SplitPane();
@@ -53,8 +62,8 @@ public class Main extends Application {
         new WindowControls(stage, messengerApp);
 
         stage.setTitle("Messenger");
-        stage.setScene(login);
         //stage.setScene(signup);
+        stage.setScene(login);
         stage.show();
     }
 

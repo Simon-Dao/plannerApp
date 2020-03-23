@@ -17,14 +17,15 @@ public class AppUI {
 
     private static TextField textField;
 
+    public Contacts contactsArea;
     public MessageArea messageArea;
 
     public AppUI(SplitPane root) {
 
         //left side
         VBox contacts = new VBox();
-        contacts.setLayoutX(400);
-        contacts.setBackground(new Background(new BackgroundFill(Color.BLACK, CornerRadii.EMPTY, Insets.EMPTY)));
+        //contacts.setBackground(new Background(new BackgroundFill(Color.BLACK, CornerRadii.EMPTY, Insets.EMPTY)));
+        contactsArea = new Contacts(contacts);
 
         //right side
         VBox rightSide = new VBox();
@@ -41,21 +42,19 @@ public class AppUI {
         textField.setPromptText("send a message!");
 
         Button send = new Button("send");
-        send.setLayoutX(145);
+        send.setLayoutX(160);
         send.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent event) {
                 if(textField.getText().length() != 0) {
-                    messageArea.addMessage(textField.getText(), Color.BLUE);
+                    messageArea.addMessage(textField.getText(), Main.localUser.getColor());
                     tools.sendMessage(textField.getText());
                     textField.clear();
                 }
             }
         });
 
-        Image img = new Image("res//arrow_icon.png");
         send.setContentDisplay(ContentDisplay.RIGHT);
-        send.setGraphic(new ImageView(img));
 
         sendMessage.getChildren().add(textField);
         textField.getParent().requestFocus();

@@ -40,7 +40,6 @@ public class UITools {
         Main.client.out.println("!userinfo!" + username + ";" + password);
     }
 
-
     public void sendNewAccountForm(String username, String password, String color) {
         Main.client.out.println("!newuser!" + username + " " + password + " " + color);
     }
@@ -99,4 +98,14 @@ public class UITools {
         Main.stage.show();
     }
 
+    public void startClient() {
+        try {
+            if (serverIsAlive(Client.IP, Client.PORT)) {
+                Main.client = new Client();
+                new Thread(Main.client).start();
+            }
+        } catch (Exception e) {
+            System.err.println("server is currently unavailable");
+        }
+    }
 }

@@ -1,0 +1,20 @@
+<component name="libraryTable">
+  <library name="java">
+    <CLASSES />
+    <JAVADOC />
+    <SOURCES>
+      <root url="file://$PROJECT_DIR$/Jerady-fontawesomefx-6cbf97484669/fontawesomefx/fontawesomefx-commons/src/main/java" />
+      <root url="file://$PROJECT_DIR$/Jerady-fontawesomefx-6cbf97484669/fontawesomefx/fontawesomefx-controls/src/main/java" />
+      <root url="file://$PROJECT_DIR$/Jerady-fontawesomefx-6cbf97484669/fontawesomefx/fontawesomefx-emojione/src/main/java" />
+      <root url="file://$PROJECT_DIR$/Jerady-fontawesomefx-6cbf97484669/fontawesomefx/fontawesomefx-emojione/src/test/java" />
+      <root url="file://$PROJECT_DIR$/Jerady-fontawesomefx-6cbf97484669/fontawesomefx/fontawesomefx-fontawesome/src/main/java" />
+      <root url="file://$PROJECT_DIR$/Jerady-fontawesomefx-6cbf97484669/fontawesomefx/fontawesomefx-fontawesome/src/test/java" />
+      <root url="file://$PROJECT_DIR$/Jerady-fontawesomefx-6cbf97484669/fontawesomefx/fontawesomefx-icons525/src/main/java" />
+      <root url="file://$PROJECT_DIR$/Jerady-fontawesomefx-6cbf97484669/fontawesomefx/fontawesomefx-materialdesignfont/src/main/java" />
+      <root url="file://$PROJECT_DIR$/Jerady-fontawesomefx-6cbf97484669/fontawesomefx/fontawesomefx-materialicons/src/main/java" />
+      <root url="file://$PROJECT_DIR$/Jerady-fontawesomefx-6cbf97484669/fontawesomefx/fontawesomefx-materialstackicons/src/main/java" />
+      <root url="file://$PROJECT_DIR$/Jerady-fontawesomefx-6cbf97484669/fontawesomefx/fontawesomefx-octicons/src/main/java" />
+      <root url="file://$PROJECT_DIR$/Jerady-fontawesomefx-6cbf97484669/fontawesomefx/fontawesomefx-weathericons/src/main/java" />
+    </SOURCES>
+  </library>
+</component>

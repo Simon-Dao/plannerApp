@@ -47,7 +47,7 @@ public class ClientHandler implements Runnable, Serializable {
 
                 String request = in.readLine();
 
-                System.out.println(request);
+             //   System.out.println(request+" "+id);
 
                 if (request.startsWith("!userinfo!")) {
                     //make code that checks if that account exists
@@ -56,7 +56,7 @@ public class ClientHandler implements Runnable, Serializable {
 
                     //TODO make the database return login errors like name doesn't exist and that stuff
 
-                    System.out.printf("%s%s",name, password);
+                    //System.out.printf("%s%s",name, password);
 
                     if (Server.dataBase.verifyLoginData(name, password)) {
                         out.println("!userIsVerified!true");
@@ -102,6 +102,9 @@ public class ClientHandler implements Runnable, Serializable {
 
     private void outToAll(String msg) {
         for (ClientHandler c : clients) {
+
+            System.out.println(clients.size());
+
             if (c.id != this.id) {
                 c.out.println(msg);
             }
