@@ -31,6 +31,30 @@ public class Client implements Runnable {
         in = new BufferedReader(new InputStreamReader(server.getInputStream()));
     }
 
+    private Color stringToColor(String str) {
+
+        Color userColor = null;
+
+        switch(str) {
+            case "blue":
+                userColor = Color.BLUE;
+                break;
+            case "red":
+                userColor = Color.RED;
+                break;
+            case "green":
+                userColor = Color.GREEN;
+                break;
+            case "orange":
+                userColor = Color.ORANGE;
+                break;
+            case "black":
+                userColor = Color.BLACK;
+                break;
+        }
+        return userColor;
+    }
+
     @Override
     public void run() {
 
@@ -42,8 +66,12 @@ public class Client implements Runnable {
                  */
                 serverResponse = in.readLine();
                 System.out.println("[CLIENT] "+serverResponse);
-                if (!serverResponse.startsWith("!")) {
-                    Platform.runLater(() -> Main.app.messageArea.addMessage(serverResponse, Color.RED));
+                if (serverResponse.startsWith("!name!")) {
+                    int[] div = {serverResponse.indexOf(" "), serverResponse.substring(serverResponse.indexOf(" ") + 1).indexOf(" ") + serverResponse.indexOf(" ")};
+                    String name = serverResponse.substring(6, serverResponse.indexOf(" "));
+                    String color = serverResponse.substring(div[0] + 8, div[1] + 1);
+                    String message = serverResponse.substring(div[1] + 11);
+                    Platform.runLater(() -> Main.app.messageArea.addMessage(name,message, stringToColor(color)));
                 }
 
                 try {

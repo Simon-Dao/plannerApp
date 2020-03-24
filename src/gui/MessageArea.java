@@ -9,7 +9,6 @@ import javafx.scene.paint.Color;
 import javafx.scene.shape.Circle;
 import javafx.scene.text.Font;
 import javafx.scene.text.Text;
-import main.Main;
 
     /*
         creates the area where messages can be displayed
@@ -24,7 +23,7 @@ public class MessageArea {
         this.scrollPane = scrollPane;
 
         textArea = new VBox();
-        for(int i=0; i<25; i++) {
+        for (int i = 0; i < 25; i++) {
             textArea.getChildren().add(makeSpace());
         }
 
@@ -42,20 +41,28 @@ public class MessageArea {
         return p;
     }
 
-    public void addMessage(String text, Color color) {
+    public void addMessage(String username, String text, Color color) {
         Pane p = new Pane();
 
-        Circle c = new Circle(10, color);
-        c.setTranslateX(15);
+        Circle c = new Circle(15, color);
+        c.setTranslateX(25);
         c.setTranslateY(15);
 
-        Text l = new Text(text);
-        l.setLayoutX(30);
-        l.setLayoutY(20);
-        l.setFill(Color.BLACK);
-        l.setFont(new Font("consolas", 15));
+        Text name = new Text(username);
+        name.setLayoutX(45);
+        name.setLayoutY(9);
+        name.setFill(Color.BLACK);
+        name.setFont(new Font("consolas", 12));
+
+        Text message = new Text(text);
+        message.setLayoutX(45);
+        message.setLayoutY(25);
+        message.setFill(Color.BLACK);
+        message.setFont(new Font("consolas", 15));
+
         p.getChildren().add(c);
-        p.getChildren().add(l);
+        p.getChildren().add(name);
+        p.getChildren().add(message);
 
         textArea.getChildren().add(p);
     }

@@ -11,6 +11,8 @@ import java.util.concurrent.Executors;
 
 public class Server {
 
+    //TODO find out why clients is adding so many things
+
     private int PORT = 5002;
 
     public static int USER_COUNT = 0;
@@ -45,9 +47,8 @@ public class Server {
             ClientHandler clientThread = new ClientHandler(client, clients, id);
 
             clients.add(clientThread);
-            System.out.println(USER_COUNT);
+            //System.out.println(USER_COUNT);
             pool.execute(clientThread);
-
         }
     }
 

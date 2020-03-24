@@ -43,7 +43,7 @@ public class LoginWindow {
         usernameWarning.setFont(new Font("consolas", 13));
 
         //prevents username textfield from taking in ! and " " for security
-        EventHandler eventHandler = new EventHandler() {
+        EventHandler usernameEvent = new EventHandler() {
             @Override
             public void handle(Event event) {
                 try {
@@ -61,11 +61,10 @@ public class LoginWindow {
                         usernameWarning.setText("");
                     }
 
-                } catch (StringIndexOutOfBoundsException e) {
-                }
+                } catch (StringIndexOutOfBoundsException e) { }
             }
         };
-        username.addEventFilter(KeyEvent.KEY_RELEASED, eventHandler);
+        username.addEventFilter(KeyEvent.KEY_RELEASED, usernameEvent);
 
         TextField password = new TextField();
         password.setStyle("-fx-background-color: #CFD8DC; -fx-background-radius: 10;");
@@ -78,6 +77,29 @@ public class LoginWindow {
         passwordWarning.setLayoutY(162);
         passwordWarning.setFill(Color.RED);
         passwordWarning.setFont(new Font("consolas", 13));
+
+        EventHandler passwordEvent = new EventHandler() {
+            @Override
+            public void handle(Event event) {
+                try {
+                    String text = password.getText();
+
+                    if (text.contains(" ")) {
+                        passwordWarning.setText("cannot use space");
+                        password.setText(text.replace(" ", ""));
+
+                    } else if (text.contains("!")) {
+                        passwordWarning.setText("cannot use ! symbol");
+                        password.setText(text.replace("!", ""));
+
+                    } else {
+                        passwordWarning.setText("");
+                    }
+
+                } catch (StringIndexOutOfBoundsException e) { }
+            }
+        };
+        password.addEventFilter(KeyEvent.KEY_RELEASED, passwordEvent);
 
         Button apply = new Button("apply");
         apply.setStyle("-fx-background-color: #1E90FF; -fx-background-radius: 5; -fx-text-fill: whitesmoke;");
@@ -101,16 +123,28 @@ public class LoginWindow {
                             e.printStackTrace();
                         }
 
-                        System.out.println("[LOGINWINDOW] "+Client.serverResponse.startsWith("!userIsVerified!true"));
-
+                        //System.out.println("[LOGINWINDOW] "+Client.serverResponse.startsWith("!userIsVerified!true"));
                             if (Main.client.serverResponse.startsWith("!userIsVerified!true")) {
+                                String userColor = Main.client.serverResponse.substring(32);
+                                Main.localUser.setName(username.getText());
+                                Main.localUser.setPassword(password.getText());
+                                Main.localUser.setColor(userColor);
                                 tools.changeScene(Main.messengerApp);
+
                             } else if (Main.client.serverResponse.startsWith("!userIsVerified!false")) {
                                 usernameWarning.setText("user could not be verified");
                             }
+                        } else {
+                        if(password.getText().isEmpty()) {
+                            passwordWarning.setText("field is empty");
                         }
+                        if(username.getText().isEmpty()) {
+                            usernameWarning.setText("field is empty");
+                        }
+                    }
                 } else {
                     System.err.println("server is currently unavailable");
+                    usernameWarning.setText("server is unavailable");
                 }
             }
         });

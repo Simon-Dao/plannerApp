@@ -31,8 +31,8 @@ public class LocalUser {
             case "green":
                 userColor = Color.GREEN;
                 break;
-            case "yellow":
-                userColor = Color.YELLOW;
+            case "orange":
+                userColor = Color.ORANGE;
                 break;
             case "black":
                 userColor = Color.BLACK;
@@ -40,5 +40,9 @@ public class LocalUser {
         }
 
         return userColor;
+    }
+
+    public String getColorInString() {
+        return color;
     }
 }

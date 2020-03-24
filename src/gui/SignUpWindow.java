@@ -194,7 +194,6 @@ public class SignUpWindow {
 
                         if (Main.client.serverResponse.equals("!nametaken!false")) {
                             //System.out.println("[SIGNUPWINDOW] creating user");
-                            Main.localUser = new LocalUser();
                             Main.localUser.setName(name);
                             Main.localUser.setPassword(pass);
                             Main.localUser.setColor(color);

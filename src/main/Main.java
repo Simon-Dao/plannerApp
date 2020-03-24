@@ -7,6 +7,7 @@ import javafx.application.Application;
 import javafx.scene.Scene;
 import javafx.scene.control.SplitPane;
 import javafx.scene.layout.Pane;
+import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 
@@ -31,25 +32,24 @@ public class Main extends Application {
 
     /*
         TODO add a friend system
-        TODO create a contacts section on the left
         TODO make it search for people and then send them a friend request
-        TODO make the person's color appear depending on login
+        TODO make the name and color of the person appear
      */
     @Override
     public void start(Stage stage) throws Exception {
 
         tools.startClient();
+        tools.instantiateLocalData();
 
         this.stage = stage;
 
-        SplitPane root = new SplitPane();
+        VBox root = new VBox();
+
         Pane loginLayout = new Pane();
         signupPane = new Pane();
-
         new LoginWindow(loginLayout);
         signupWindow = new SignUpWindow(signupPane);
         app = new AppUI(root);
-
         signup = new Scene(signupPane, 300, 300);
         new WindowControls(stage, signup);
 
@@ -63,7 +63,8 @@ public class Main extends Application {
 
         stage.setTitle("Messenger");
         //stage.setScene(signup);
-        stage.setScene(login);
+        //stage.setScene(login);
+        stage.setScene(messengerApp);
         stage.show();
     }
 

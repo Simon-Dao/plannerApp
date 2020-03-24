@@ -43,7 +43,7 @@ public class DataBase {
         return result;
     }
 
-    public void getRecord() {
+    public void getRecords() {
 
         System.out.println();
         for (int i = 0; i < table.size(); i++) {
@@ -52,6 +52,10 @@ public class DataBase {
             System.out.println("[SERVER] color    " + table.get(keys.get(i)).color + "\n");
         }
         System.out.println();
+    }
+
+    public User getUser(String key) {
+        return table.get(key);
     }
 
     public boolean verifyLoginData(String name, String password) {

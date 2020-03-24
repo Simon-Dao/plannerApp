@@ -47,7 +47,7 @@ public class ClientHandler implements Runnable, Serializable {
 
                 String request = in.readLine();
 
-             //   System.out.println(request+" "+id);
+                System.out.println(request + " " + id);
 
                 if (request.startsWith("!userinfo!")) {
                     //make code that checks if that account exists
@@ -59,7 +59,7 @@ public class ClientHandler implements Runnable, Serializable {
                     //System.out.printf("%s%s",name, password);
 
                     if (Server.dataBase.verifyLoginData(name, password)) {
-                        out.println("!userIsVerified!true");
+                        out.println("!userIsVerified!true !userColor!" + Server.dataBase.getUser(name).color);
                     } else {
                         out.println("!userIsVerified!false");
                     }
@@ -83,9 +83,13 @@ public class ClientHandler implements Runnable, Serializable {
                     } else if (!Server.dataBase.checkForDupe(name)) {
                         out.println("!nametaken!false");
                     }
-                } else {
+                } else if (request.startsWith("!name!")) {
                     //System.out.println("[CLIENTHANDLER] sending message "+request);
-                    outToAll(id + " " + request);
+                    int[] div = {request.indexOf(" "), request.substring(request.indexOf(" ") + 1).indexOf(" ") + request.indexOf(" ")};
+                    String name = request.substring(6, request.indexOf(" "));
+                    String color = request.substring(div[0] + 8, div[1] + 1);
+                    String message = request.substring(div[1] + 11);
+                    outToAll(name, color, message);
                 }
             }
         } catch (Exception e) {
@@ -100,13 +104,13 @@ public class ClientHandler implements Runnable, Serializable {
         }
     }
 
-    private void outToAll(String msg) {
+    private void outToAll(String name, String color, String msg) {
         for (ClientHandler c : clients) {
 
             System.out.println(clients.size());
 
             if (c.id != this.id) {
-                c.out.println(msg);
+                c.out.println("!name!" + name + " !color!" + color + " !message!" + msg);
             }
         }
     }

@@ -2,34 +2,35 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Icons.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/java.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/client/LocalUser.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/Messenger/gui/LoginWindow$4.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Messenger.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Messenger.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Messenger/client/Client.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Messenger/client/Client.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Messenger/database/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Messenger/database/User.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Messenger/client/LocalUser.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Messenger/client/LocalUser.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Messenger/database/DataBase.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Messenger/database/DataBase.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Messenger/gui/AppUI$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Messenger/gui/AppUI$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Messenger/gui/AppUI.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Messenger/gui/AppUI.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Messenger/gui/Contacts.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Messenger/gui/Contacts.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Messenger/gui/LoginWindow$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Messenger/gui/LoginWindow$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Messenger/gui/LoginWindow$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Messenger/gui/LoginWindow$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Messenger/gui/LoginWindow$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Messenger/gui/LoginWindow$3.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Messenger/gui/LoginWindow.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Messenger/gui/LoginWindow.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Messenger/gui/SignUpWindow$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Messenger/gui/SignUpWindow$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Messenger/gui/SignUpWindow$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Messenger/gui/SignUpWindow$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Messenger/gui/MessageArea.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Messenger/gui/MessageArea.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Messenger/gui/SignUpWindow$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Messenger/gui/SignUpWindow$3.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Messenger/gui/SignUpWindow$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Messenger/gui/SignUpWindow$4.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Messenger/gui/SignUpWindow.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Messenger/gui/SignUpWindow.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Messenger/gui/UITools$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Messenger/gui/UITools$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Messenger/gui/UITools$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Messenger/gui/UITools$2.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Messenger/gui/UITools.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Messenger/gui/UITools.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Messenger/main/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Messenger/main/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Messenger/main/Style.css" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Messenger/main/Style.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Messenger/server/ClientHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Messenger/server/ClientHandler.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Messenger/server/Server.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Messenger/server/Server.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/database/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/database/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/client/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/client/Client.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/client/LocalUser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/client/LocalUser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/database/DataBase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/database/DataBase.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/gui/AppUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/AppUI.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/gui/Contacts.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/Contacts.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/gui/LoginWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/LoginWindow.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/gui/MessageArea.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/MessageArea.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/gui/SignUpWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/SignUpWindow.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/gui/UITools.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/UITools.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Main.java" afterDir="false" />
@@ -93,10 +94,10 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/database/DataBase.java">
+        <entry file="file://$PROJECT_DIR$/src/gui/MessageArea.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="313">
-              <caret line="18" column="33" selection-start-line="18" selection-start-column="33" selection-end-line="18" selection-end-column="33" />
+            <state relative-caret-position="440">
+              <caret line="64" column="37" lean-forward="true" selection-start-line="45" selection-end-line="64" selection-end-column="37" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -105,80 +106,25 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/gui/Contacts.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="216">
+              <caret line="65" column="31" selection-start-line="65" selection-start-column="31" selection-end-line="65" selection-end-column="31" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="183">
-              <caret line="35" column="62" lean-forward="true" selection-start-line="35" selection-start-column="62" selection-end-line="35" selection-end-column="62" />
+            <state relative-caret-position="535">
+              <caret line="65" column="10" selection-start-line="65" selection-start-column="10" selection-end-line="65" selection-end-column="10" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/gui/SignUpWindow.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="336">
-              <caret line="196" column="61" selection-start-line="196" selection-start-column="61" selection-end-line="196" selection-end-column="61" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/client/Client.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="250">
-              <caret line="45" column="101" selection-start-line="45" selection-start-column="101" selection-end-line="45" selection-end-column="101" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/client/LocalUser.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="446">
-              <caret line="27" column="23" lean-forward="true" selection-start-line="27" selection-start-column="23" selection-end-line="27" selection-end-column="23" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/gui/AppUI.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="351">
-              <caret line="49" column="89" selection-start-line="49" selection-start-column="89" selection-end-line="49" selection-end-column="89" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/gui/LoginWindow.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="288">
-              <caret line="108" column="83" selection-start-line="108" selection-start-column="83" selection-end-line="108" selection-end-column="83" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#4643#4644#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/Style.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="209">
-              <caret line="12" column="33" lean-forward="true" selection-start-line="12" selection-start-column="26" selection-end-line="12" selection-end-column="33" />
             </state>
           </provider>
         </entry>
@@ -214,20 +160,20 @@
         <option value="$PROJECT_DIR$/src/client/User.java" />
         <option value="$PROJECT_DIR$/src/gui/WindowControls.java" />
         <option value="$PROJECT_DIR$/src/server/DataBase.java" />
-        <option value="$PROJECT_DIR$/src/database/DataBase.java" />
         <option value="$PROJECT_DIR$/src/database/User.java" />
-        <option value="$PROJECT_DIR$/src/gui/Contacts.java" />
-        <option value="$PROJECT_DIR$/src/server/Server.java" />
-        <option value="$PROJECT_DIR$/src/gui/UITools.java" />
-        <option value="$PROJECT_DIR$/src/server/ClientHandler.java" />
-        <option value="$PROJECT_DIR$/src/gui/MessageArea.java" />
-        <option value="$PROJECT_DIR$/src/main/Style.css" />
-        <option value="$PROJECT_DIR$/src/gui/LoginWindow.java" />
-        <option value="$PROJECT_DIR$/src/client/LocalUser.java" />
+        <option value="$PROJECT_DIR$/src/database/DataBase.java" />
         <option value="$PROJECT_DIR$/src/gui/SignUpWindow.java" />
+        <option value="$PROJECT_DIR$/src/gui/LoginWindow.java" />
+        <option value="$PROJECT_DIR$/src/gui/UITools.java" />
+        <option value="$PROJECT_DIR$/src/gui/MessageArea.java" />
+        <option value="$PROJECT_DIR$/src/server/ClientHandler.java" />
+        <option value="$PROJECT_DIR$/src/server/Server.java" />
+        <option value="$PROJECT_DIR$/src/client/LocalUser.java" />
         <option value="$PROJECT_DIR$/src/client/Client.java" />
         <option value="$PROJECT_DIR$/src/gui/AppUI.java" />
+        <option value="$PROJECT_DIR$/src/main/Style.css" />
         <option value="$PROJECT_DIR$/src/main/Main.java" />
+        <option value="$PROJECT_DIR$/src/gui/Contacts.java" />
       </list>
     </option>
   </component>
@@ -247,7 +193,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -305,6 +250,7 @@
         </subPane>
       </pane>
       <pane id="Scope" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -316,7 +262,7 @@
     <property name="MemberChooser.sorted" value="false" />
     <property name="OverrideImplement.combined" value="false" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1584939460482" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1585030845412" />
     <property name="dynamic.classpath" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/Jerady-fontawesomefx-6cbf97484669" />
     <property name="project.structure.last.edited" value="Libraries" />
@@ -465,7 +411,7 @@
     <frame x="-8" y="-8" width="1696" height="1026" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.6703755" visible="true" weight="0.29278728" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.6703755" visible="true" weight="0.30378973" />
       <window_info id="Structure" order="1" weight="0.25" />
       <window_info id="Favorites" order="2" />
       <window_info id="Designer" order="3" />
@@ -474,7 +420,7 @@
       <window_info id="Capture Tool" order="6" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.32586786" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.32586786" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39977604" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -500,7 +446,7 @@
       <window_info anchor="right" id="Theme Preview" order="10" />
     </layout>
     <layout-to-restore>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.6703755" visible="true" weight="0.29278728" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.6703755" visible="true" weight="0.30378973" />
       <window_info id="Structure" order="1" weight="0.25" />
       <window_info id="Favorites" order="2" />
       <window_info id="Designer" order="3" />
@@ -577,6 +523,21 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/res/noun_Arrow_2427329.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/database/DataBase.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="503">
+          <caret line="57" column="30" selection-start-line="57" selection-start-column="30" selection-end-line="57" selection-end-column="30" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1455#1456#0" expanded="true" />
+            <element signature="e#1488#1489#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/database/User.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="190">
@@ -584,23 +545,32 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/res/noun_Arrow_2427329.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/gui/Contacts.java">
+    <entry file="file://$PROJECT_DIR$/src/gui/UITools.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="17" selection-start-line="17" selection-end-line="17" />
+        <state relative-caret-position="60">
+          <caret line="18" lean-forward="true" selection-start-line="18" selection-end-line="18" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#3160#3161#0" expanded="true" />
+            <element signature="e#3208#3209#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/client/Client.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="503">
+          <caret line="56" lean-forward="true" selection-start-line="56" selection-end-line="56" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/server/Server.java">
+    <entry file="file://$PROJECT_DIR$/src/gui/SignUpWindow.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="541">
-          <caret line="47" column="41" selection-start-line="47" selection-start-column="41" selection-end-line="47" selection-end-column="41" />
+        <state relative-caret-position="497">
+          <caret line="165" column="47" selection-start-line="165" selection-start-column="41" selection-end-line="165" selection-end-column="47" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -609,45 +579,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/server/ClientHandler.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="152">
-          <caret line="8" selection-start-line="8" selection-end-line="8" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/gui/MessageArea.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="24" lean-forward="true" selection-start-line="24" selection-end-line="24" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/Style.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="209">
-          <caret line="12" column="33" lean-forward="true" selection-start-line="12" selection-start-column="26" selection-end-line="12" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/database/DataBase.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="313">
-          <caret line="18" column="33" selection-start-line="18" selection-start-column="33" selection-end-line="18" selection-end-column="33" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/gui/UITools.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-770">
-          <caret line="40" column="5" selection-start-line="40" selection-start-column="5" selection-end-line="40" selection-end-column="5" />
+        <state relative-caret-position="354">
+          <caret line="49" column="55" lean-forward="true" selection-start-line="49" selection-start-column="55" selection-end-line="49" selection-end-column="55" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -656,36 +589,18 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/gui/LoginWindow.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="288">
-          <caret line="108" column="83" selection-start-line="108" selection-start-column="83" selection-end-line="108" selection-end-column="83" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#4643#4644#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/client/LocalUser.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="446">
-          <caret line="27" column="23" lean-forward="true" selection-start-line="27" selection-start-column="23" selection-end-line="27" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/gui/SignUpWindow.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="336">
-          <caret line="196" column="61" selection-start-line="196" selection-start-column="61" selection-end-line="196" selection-end-column="61" />
+        <state relative-caret-position="350">
+          <caret line="129" column="77" selection-start-line="129" selection-start-column="77" selection-end-line="129" selection-end-column="77" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/client/Client.java">
+    <entry file="file://$PROJECT_DIR$/src/server/Server.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="250">
-          <caret line="45" column="101" selection-start-line="45" selection-start-column="101" selection-end-line="45" selection-end-column="101" />
+        <state relative-caret-position="269">
+          <caret line="49" column="14" selection-start-line="49" selection-start-column="14" selection-end-line="49" selection-end-column="14" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -694,18 +609,52 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/gui/AppUI.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="351">
-          <caret line="49" column="89" selection-start-line="49" selection-start-column="89" selection-end-line="49" selection-end-column="89" />
+        <state relative-caret-position="-220">
+          <caret line="26" column="30" lean-forward="true" selection-start-line="26" selection-start-column="30" selection-end-line="26" selection-end-column="30" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/Style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret line="7" column="22" selection-start-line="7" selection-start-column="22" selection-end-line="7" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/client/LocalUser.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3">
+          <caret line="23" selection-start-line="23" selection-end-line="23" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="183">
-          <caret line="35" column="62" lean-forward="true" selection-start-line="35" selection-start-column="62" selection-end-line="35" selection-end-column="62" />
+        <state relative-caret-position="535">
+          <caret line="65" column="10" selection-start-line="65" selection-start-column="10" selection-end-line="65" selection-end-column="10" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/gui/MessageArea.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="440">
+          <caret line="64" column="37" lean-forward="true" selection-start-line="45" selection-end-line="64" selection-end-column="37" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/gui/Contacts.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="216">
+          <caret line="65" column="31" selection-start-line="65" selection-start-column="31" selection-end-line="65" selection-end-column="31" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

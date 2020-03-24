@@ -8,6 +8,28 @@ and open the template in the editor.
     Author     : Simon Dao
 */
 
+#ContactsPane {
+    -fx-background-color: #1e90ff;
+    -fx-border-color: #1e90ff;
+}
+
+#FriendScrollPane > .viewport {
+    -fx-background-color: #D5DBDB;
+    -fx-border-color:whitesmoke;
+}
+
+#TopPane {
+    -fx-background-color: #1e90ff;
+    -fx-border-color: #1e90ff;
+}
+
+#me {
+    -fx-background-color: #1e90ff;
+}
+
+#bottomPane {
+    -fx-background-color: #1e90ff;
+}
 
 .button {
     -fx-background-color: #1e90ff;
@@ -19,7 +41,10 @@ and open the template in the editor.
 .text-field {
     -fx-background-color: #CFD8DC ;
     -fx-background-radius: 20;
+    -fx-font-family: Open Sans;
 }
+
+
 /*
 .button:hover {
     -fx-border-color: #1e90ff;

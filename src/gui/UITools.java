@@ -2,6 +2,7 @@ package gui;
 
 
 import client.Client;
+import client.LocalUser;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.event.ActionEvent;
@@ -31,8 +32,8 @@ public class UITools {
         });
     }
 
-    public void sendMessage(String message) {
-        Main.client.out.println(message);
+    public void sendMessage(String username, String color, String message) {
+        Main.client.out.println("!name!"+username+" !color!"+color+" !message!"+message);
         Main.client.out.flush();
     }
 
@@ -107,5 +108,9 @@ public class UITools {
         } catch (Exception e) {
             System.err.println("server is currently unavailable");
         }
+    }
+
+    public void instantiateLocalData() {
+        Main.localUser = new LocalUser();
     }
 }
