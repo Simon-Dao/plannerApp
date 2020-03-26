@@ -1,5 +1,8 @@
 package gui;
 
+import client.Client;
+import client.Friend;
+import client.LocalUser;
 import javafx.geometry.Insets;
 import javafx.scene.control.ScrollPane;
 import javafx.scene.control.TextField;
@@ -11,10 +14,14 @@ import javafx.scene.text.Font;
 import javafx.scene.text.Text;
 import main.Main;
 
+import java.util.ArrayList;
+
 public class Contacts {
 
-    VBox layout;
-    ScrollPane friends;
+    private VBox layout;
+    private VBox contact;
+    private ScrollPane friends;
+    private UITools tools = new UITools();
 
     public Contacts(VBox contacts) {
         this.layout = contacts;
@@ -28,60 +35,14 @@ public class Contacts {
     }
 
     private ScrollPane createTopSection() {
-        /*
-        Pane top = new Pane();
-        top.setPrefHeight(100);
-
-        Text topText = new Text("Search for people");
-
-        TextField field = new TextField();
-        field.setPromptText("find people!");
-        field.setPrefWidth(130);
-        field.setLayoutX(10);
-        field.setLayoutY(40);
-
-        top.getChildren().add(field);
-        */
         ScrollPane root = new ScrollPane();
 
         VBox top = new VBox();
         top.setId("FriendScrollPane");
         top.setPrefHeight(420);
+        contact = new VBox();
 
-        VBox contact = new VBox();
-
-        for(int i = 0; i<1; i++) {
-
-            Pane pane = new Pane();
-            pane.setStyle("-fx-background-color: white;");
-            //pane.setPrefHeight(80);
-            pane.setMinHeight(40);
-
-            Circle profile = new Circle(10);
-            profile.setLayoutX(15);
-            profile.setLayoutY(20);
-
-            Text test = new Text("test");
-            test.setFont(new Font("consolas", 14));
-            test.setLayoutX(100);
-            test.setLayoutY(30);
-            test.setFill(Color.BLACK);
-
-            Text test2 = new Text("whats up my diggaly foo");
-            test.setFont(new Font("consolas", 13));
-            test.setLayoutX(15);
-            //test.setLayoutY(10);
-            test.setFill(Color.BLACK);
-
-            Rectangle bottom = new Rectangle(0,25,300,1);
-            bottom.setFill(Color.GREY);
-
-            pane.getChildren().add(profile);
-            pane.getChildren().add(test);
-            pane.getChildren().add(test2);
-            //pane.getChildren().add(bottom);
-            contact.getChildren().add(pane);
-        }
+        addContacts();
 
         top.getChildren().add(contact);
 
@@ -95,6 +56,58 @@ public class Contacts {
         bottom.setId("bottomPane");
         bottom.setPrefHeight(80);
 
+        Circle profileColor = new Circle(20,20,15,Main.localUser.getColor());
+
+        //name color settings
+        Text username = new Text(Main.localUser.getName());
+        username.setFont(new Font("consolas", 15));
+        username.setFill(Color.WHITESMOKE);
+        username.setLayoutX(40);
+        username.setLayoutY(23);
+
+        bottom.getChildren().add(profileColor);
+        bottom.getChildren().add(username);
+
         return bottom;
+    }
+
+    private void addContacts() {
+
+        ArrayList<Friend> friends = Main.localUser.friends;
+
+        for(int i = 0; i<friends.size(); i++) {
+            addContact(friends.get(i).username,friends.get(i).color);
+        }
+    }
+
+    private void addContact(String username, String color) {
+        Pane pane = new Pane();
+        pane.setStyle("-fx-background-color: #DCEAEA ;");
+        pane.setPrefWidth(226);
+        pane.setMinHeight(50);
+        pane.setPrefHeight(50);
+        pane.setMaxHeight(50);
+
+        Circle profile = new Circle(15);
+        profile.setLayoutX(20);
+        profile.setLayoutY(22);
+        profile.setFill(tools.StringToColor(color));
+
+        Text name = new Text(username);
+        name.setFont(new Font("consolas", 17));
+        name.setLayoutX(40);
+        name.setLayoutY(18);
+        name.setFill(Color.BLACK);
+
+        Text message = new Text("message");
+        message.setFont(new Font("consolas", 12));
+        message.setLayoutX(40);
+        message.setLayoutY(35);
+        message.setFill(Color.BLUE);
+
+        pane.getChildren().add(profile);
+        pane.getChildren().add(name);
+        pane.getChildren().add(message);
+        contact.getChildren().add(pane);
     }
 }

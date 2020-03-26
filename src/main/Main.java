@@ -16,8 +16,11 @@ public class Main extends Application {
     public static Client client;
 
     public static Stage stage;
+
     public static Scene messengerApp;
+
     public static Scene login;
+
     public static Scene signup;
 
     private UITools tools = new UITools();
@@ -29,6 +32,8 @@ public class Main extends Application {
     public static AppUI app;
 
     public static LocalUser localUser;
+
+    public static VBox root;
 
     /*
         TODO add a friend system
@@ -43,13 +48,13 @@ public class Main extends Application {
 
         this.stage = stage;
 
-        VBox root = new VBox();
+        root = new VBox();
 
         Pane loginLayout = new Pane();
         signupPane = new Pane();
         new LoginWindow(loginLayout);
         signupWindow = new SignUpWindow(signupPane);
-        app = new AppUI(root);
+
         signup = new Scene(signupPane, 300, 300);
         new WindowControls(stage, signup);
 
@@ -63,8 +68,8 @@ public class Main extends Application {
 
         stage.setTitle("Messenger");
         //stage.setScene(signup);
-        //stage.setScene(login);
-        stage.setScene(messengerApp);
+        stage.setScene(login);
+        //stage.setScene(messengerApp);
         stage.show();
     }
 

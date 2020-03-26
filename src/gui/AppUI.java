@@ -9,6 +9,7 @@ import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.*;
 import javafx.scene.paint.Color;
+import javafx.scene.text.Font;
 import javafx.scene.text.Text;
 import main.Main;
 
@@ -20,6 +21,8 @@ public class AppUI {
 
     public Contacts contactsArea;
     public MessageArea messageArea;
+
+    //TODO make it search
 
     public AppUI(VBox root) {
 
@@ -36,8 +39,18 @@ public class AppUI {
         Pane pane = new Pane();
         pane.setPrefHeight(60);
 
-        Text test = new Text("hello");
-        pane.getChildren().add(test);
+        Text searchText = new Text("search");
+        searchText.setLayoutX(10);
+        searchText.setLayoutY(20);
+        searchText.setFill(Color.WHITESMOKE);
+        searchText.setFont(new Font("consolas",18));
+        pane.getChildren().add(searchText);
+
+        TextField search = new TextField();
+        search.setPromptText("search for others!");
+        search.setLayoutX(10);
+        search.setLayoutY(26);
+        pane.getChildren().add(search);
 
         return pane;
     }

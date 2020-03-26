@@ -10,6 +10,7 @@ import javafx.event.EventHandler;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
+import javafx.scene.paint.Color;
 import main.Main;
 
 import java.io.IOException;
@@ -108,6 +109,30 @@ public class UITools {
         } catch (Exception e) {
             System.err.println("server is currently unavailable");
         }
+    }
+
+    public Color StringToColor(String color) {
+
+        Color userColor = null;
+
+        switch(color) {
+            case "blue":
+                userColor = Color.BLUE;
+                break;
+            case "red":
+                userColor = Color.RED;
+                break;
+            case "green":
+                userColor = Color.GREEN;
+                break;
+            case "orange":
+                userColor = Color.ORANGE;
+                break;
+            case "black":
+                userColor = Color.BLACK;
+                break;
+        }
+        return userColor;
     }
 
     public void instantiateLocalData() {

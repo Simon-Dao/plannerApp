@@ -198,6 +198,8 @@ public class SignUpWindow {
                             Main.localUser.setPassword(pass);
                             Main.localUser.setColor(color);
 
+                            Main.app = new AppUI(Main.root);
+
                             tools.createUser(name, pass, color);
                         } else if (Main.client.serverResponse.equals("!nametaken!true")) {
                             usernameWarning.setText("username is unavailable");

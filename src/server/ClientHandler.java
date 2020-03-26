@@ -6,6 +6,8 @@ import java.util.ArrayList;
 import java.util.Formatter;
 import java.util.Scanner;
 
+//TODO make the server store the lists of friends
+
 public class ClientHandler implements Runnable, Serializable {
 
     ArrayList<ClientHandler> clients;

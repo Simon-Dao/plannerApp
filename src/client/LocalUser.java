@@ -2,10 +2,23 @@ package client;
 
 import javafx.scene.paint.Color;
 
+import java.util.ArrayList;
+
 public class LocalUser {
     private String name;
+
     private String password;
+
     private String color;
+
+    public ArrayList<Friend> friends = new ArrayList<>();
+
+    //TODO make the user get the list from the server
+
+    public LocalUser() {
+        friends.add(new Friend("bob","black"));
+        friends.add(new Friend("jimmy","blue"));
+    }
 
     public void setName(String name) { this.name = name; }
 
@@ -44,5 +57,14 @@ public class LocalUser {
 
     public String getColorInString() {
         return color;
+    }
+
+    public ArrayList<Friend> getFriendList() {
+        return friends;
+    }
+
+    public void addFriend(String username, String color) {
+        Friend newFriend = new Friend(username, color);
+        friends.add(newFriend);
     }
 }

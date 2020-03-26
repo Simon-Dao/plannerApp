@@ -129,6 +129,9 @@ public class LoginWindow {
                                 Main.localUser.setName(username.getText());
                                 Main.localUser.setPassword(password.getText());
                                 Main.localUser.setColor(userColor);
+
+                                Main.app = new AppUI(Main.root);
+
                                 tools.changeScene(Main.messengerApp);
 
                             } else if (Main.client.serverResponse.startsWith("!userIsVerified!false")) {

@@ -9,8 +9,8 @@ and open the template in the editor.
 */
 
 #ContactsPane {
-    -fx-background-color: #1e90ff;
-    -fx-border-color: #1e90ff;
+    -fx-background-color: #19b5fe;
+    -fx-border-color: #19b5fe;
 }
 
 #FriendScrollPane > .viewport {
@@ -19,20 +19,24 @@ and open the template in the editor.
 }
 
 #TopPane {
-    -fx-background-color: #1e90ff;
-    -fx-border-color: #1e90ff;
+    -fx-background-color: #19b5fe;
+    -fx-border-color: #19b5fe;
 }
 
 #me {
-    -fx-background-color: #1e90ff;
+    -fx-background-color: #19b5fe;
 }
 
 #bottomPane {
-    -fx-background-color: #1e90ff;
+    -fx-background-color: #19b5fe;
+}
+
+#search {
+
 }
 
 .button {
-    -fx-background-color: #1e90ff;
+    -fx-background-color: #19b5fe;
     -fx-background-radius: 20;
     -fx-text-fill: white;
     -fx-font-family: Open Sans;
