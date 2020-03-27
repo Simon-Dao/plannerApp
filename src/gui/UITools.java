@@ -34,7 +34,7 @@ public class UITools {
     }
 
     public void sendMessage(String username, String color, String message) {
-        Main.client.out.println("!name!"+username+" !color!"+color+" !message!"+message);
+        Main.client.out.println("!name!" + username + " !color!" + color + " !message!" + message);
         Main.client.out.flush();
     }
 
@@ -115,7 +115,7 @@ public class UITools {
 
         Color userColor = null;
 
-        switch(color) {
+        switch (color) {
             case "blue":
                 userColor = Color.BLUE;
                 break;

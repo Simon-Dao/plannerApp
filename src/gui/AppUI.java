@@ -1,11 +1,13 @@
 package gui;
 
 import javafx.event.ActionEvent;
+import javafx.event.Event;
 import javafx.event.EventHandler;
 import javafx.geometry.Insets;
 import javafx.scene.control.*;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.*;
 import javafx.scene.paint.Color;
@@ -46,11 +48,7 @@ public class AppUI {
         searchText.setFont(new Font("consolas",18));
         pane.getChildren().add(searchText);
 
-        TextField search = new TextField();
-        search.setPromptText("search for others!");
-        search.setLayoutX(10);
-        search.setLayoutY(26);
-        pane.getChildren().add(search);
+        SearchBarSection searchBar = new SearchBarSection(pane);
 
         return pane;
     }
